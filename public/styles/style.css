@@ -1,0 +1,142 @@
+/* General body styling */
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to bottom right, #a8dadc, #f1faee);
+  min-height: 100vh;
+  padding-top: 80px; /* Ensures space for fixed navbar */
+  overflow-x: hidden; /* Prevents horizontal scroll */
+}
+
+/* Navbar Styling */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #1d3557;
+  padding: 1rem 2rem;
+  color: #f1faee;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  box-sizing: border-box;
+}
+
+.navbar-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #f1faee;
+}
+
+.navbar-links {
+  display: flex;
+  list-style: none;
+  gap: 1rem;
+  margin: 0;
+}
+
+.navbar-links a {
+  color: #f1faee;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  transition: background-color 0.3s;
+}
+
+.navbar-links a:hover {
+  background-color: #457b9d;
+}
+
+.navbar-toggle {
+  display: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #f1faee;
+}
+
+/* Responsive navbar behavior */
+@media (max-width: 768px) {
+  .navbar-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    background-color: #1d3557;
+    width: 100%;
+    padding: 1rem;
+    border-radius: 0 0 10px 10px;
+  }
+
+  .navbar-links.show {
+    display: flex;
+  }
+
+  .navbar-toggle {
+    display: block;
+  }
+}
+
+/* Form Container Styling */
+.form-container {
+  background-color: #fff;
+  padding: 10rem 5rem;
+  width: 100%;
+  max-width: 500px;
+  margin: auto;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Label styling */
+.form-container label {
+  font-size: 1rem;
+  color: #1d3557;
+  align-self: flex-start;
+}
+
+/* Input Fields */
+.form-container input[type="text"] {
+  width: 100%;
+  padding: 0.75rem;
+  margin: 0.5rem 0;
+  border: 1px solid #a8dadc;
+  border-radius: 10px;
+  box-sizing: border-box;
+  font-size: 1rem;
+  transition: box-shadow 0.3s;
+}
+
+/* Button Styling */
+.form-container input[type="submit"] {
+  width: 300px;
+  height: 50px;
+  padding: 0.75rem;
+  margin-top: 1rem;
+  border: none;
+  border-radius: 20px;
+  background-color: #1d3557;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.form-container input[type="submit"]:hover {
+  background-color: #457b9d;
+}
+
+.form-container input[type="text"]:focus {
+  outline: none;
+  box-shadow: 0 0 8px rgba(26, 115, 232, 0.3);
+}

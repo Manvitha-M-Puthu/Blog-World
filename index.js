@@ -9,13 +9,22 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const blogPosts = [];
 
 app.use(bodyParser.urlencoded({extended:true}));
+app.use(express.static("public"));
 
 app.get("/", (req,res)=>{
     res.sendFile(__dirname+"/public/index.html");
 });
 
-app.post("/write",(req,res)=>{
-    res.render("index.ejs",{});
+// app.post("/write",(req,res)=>{
+//     res.render("index.ejs",{});
+// });
+app.post("/submit",(req,res)=>{
+    if(blogPosts.length===0){
+        res.render("index.ejs");
+    }
+    else{
+        res.render("index.ejs",{Posts:blogPosts});
+    } 
 });
 
 app.post("/post", (req,res)=>{

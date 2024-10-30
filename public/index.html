@@ -1,16 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BlogWorld</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Page</title>
+  <style>
+    /* Body and Background */
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      margin: 0;
+      background: linear-gradient(to bottom right, #a8dadc, #f1faee);
+      font-family: Arial, sans-serif;
+    }
+
+    /* Login Container */
+    .login-container {
+      background-color: #fff;
+      padding: 3rem 2rem;
+      width: 100%;
+      max-width: 400px;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    /* Hover effect on container */
+    .login-container:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    }
+
+    /* Title */
+    .login-container h2 {
+      margin-bottom: 2rem;
+      color: #1d3557;
+    }
+
+    /* Input Fields */
+    .login-input {
+      width: 100%;
+      padding: 0.75rem;
+      margin: 0.75rem 0;
+      border: 1px solid #a8dadc;
+      border-radius: 10px;
+      box-sizing: border-box;
+      font-size: 1rem;
+      transition: box-shadow 0.3s;
+    }
+
+    /* Focused input shadow */
+    .login-input:focus {
+      outline: none;
+      box-shadow: 0 0 8px rgba(26, 115, 232, 0.3);
+    }
+
+    /* Login Button */
+    .login-button {
+      width: 100%;
+      padding: 0.75rem;
+      margin-top: 1.5rem;
+      border: none;
+      border-radius: 20px;
+      background-color: #1d3557;
+      color: white;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    /* Hover effect on button */
+    .login-button:hover {
+      background-color: #457b9d;
+    }
+
+    /* Subtle shadow and rounded edges */
+    .login-container, .login-input, .login-button {
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+  </style>
 </head>
 <body>
-    <h1>Heyy!! Welcome to Blog World! The platform to express!</h1>
-    <form action="/write" method="POST">
-        <label for="author">Enter your name</label>
-        <input type="text" name="author" required>
-        <input type="submit" value="Write Blog">
+  <div class="login-container">
+    <h2>Login</h2>
+    <form action="/submit" method="POST">
+        <input type="text" class="login-input" placeholder="Username" name="user" required>
+        <input type="password" class="login-input" placeholder="Password" required>
+        <input type="submit" class="login-button"></input>
     </form>
+  </div>
 </body>
 </html>
+
