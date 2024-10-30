@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BlogWorld</title>
+</head>
+<body>
+    <% if(locals.Posts) {%>
+    <form action="/blogPage" method="GET">
+        <input type="submit" value="Go to Blog Page" name="blogPage">
+    </form>
+    <form action="/anotherBlog" method="POST">
+        <input type="submit" value="Add another blog">
+    </form>
+    <%}else{%>
+    <form action="/post" method="POST">
+        <label for="blogTitle">Enter Title for your blog</label>
+        <input type="text" name="blogTitle" required>
+        <label for="blogContent">Write Blog</label>
+        <input type="text" name="blogContent" required>
+        <input type="submit" value="submit">
+    </form>
+    <% } %>
+</body>
+</html>
