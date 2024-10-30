@@ -29,7 +29,12 @@ app.post("/anotherBlog",(req,res)=>{
 })
 
 app.get("/blogPage",(req,res)=>{
-    res.render("blogPage.ejs",{Posts:blogPosts});
+    if(blogPosts.length===0){
+        res.render("blogPage.ejs");
+    }
+    else{
+        res.render("blogPage.ejs",{Posts:blogPosts});
+    } 
 });
 
 app.listen(port,()=>{
